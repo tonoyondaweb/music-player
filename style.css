@@ -96,10 +96,12 @@ h3 {
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
-
+  user-select: none;
 }
 
-
+.fas:hover{
+  filter: brightness(0.3);
+}
 
 .main-button {
   font-size: 40px;
@@ -127,7 +129,7 @@ h3 {
   }
 
   .player-controls {
-    top: -10px;
+    top: -17px;
     left: 100px;
   }
 }
