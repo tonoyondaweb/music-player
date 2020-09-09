@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Player container -->
+    <div class="player-container">
+        <!-- Album art contianer -->
+        <div class="img-container" id="image-container">
+            <img src="./img/jacinto-1.jpg" alt="Album art">
+        </div>
+        <div id="title">
+            <h2>Raggae Fusion</h2>
+        </div>
+        <div id="artist">
+            <h3>Jacinto</h3>
+        </div>
+        <!-- Progress -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">2:06</span>
+            </div>
+        </div>
+        <!-- Controls -->
+        <div class="player-controls">
+            <i class="fas fa-backward" id="prev" title="Previous"></i>
+            <i class="fas fa-play" id="play" title="Play"></i>
+            <i class="fas fa-forward" id="prev" title="Next"></i>
+        </div>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
 </body>

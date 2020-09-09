@@ -1,4 +1,5 @@
 /* Images created by: https://unsplash.com/@pawel_czerwinski */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 html {
   box-sizing: border-box;
@@ -11,17 +12,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-
+.player-container{
+  position: relative;
+  height: 425px;
+  width: 350px;
+  background-color: #dfdfdf;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
+}
 
 .img-container {
-
+  height: 250px;
+  width: 250px;
   position: relative;
-  top: -50px;
+  top: -30px;
   left: 50px;
+}
+
+.img-container img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -40,6 +57,8 @@ h3 {
 
 /* Progress */
 .progress-container {
+  position: relative;
+  top: -4%;
   background: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -67,12 +86,13 @@ h3 {
 /* Controls */
 .player-controls {
   position: relative;
-  top: -15px;
-  left: 120px;
+  top: -27px;
+  left: 100px;
   width: 200px;
 }
 
 .fas {
+  cursor: pointer;
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
@@ -90,9 +110,12 @@ h3 {
 /* Media Query: iPhone (Vertical) */
 @media screen and (max-width: 376px) {
 
+  .player-container{
+    top: 110px;
+  }
 
   .img-container {
-    left: 29px;
+    left: 50px;
   }
 
   h2 {
