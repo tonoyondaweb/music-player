@@ -4,6 +4,12 @@ const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const audio = document.querySelector('audio');
 
+// Progress bar elements
+const progressContainer = document.getElementById('progress-container');
+const progressBar = document.getElementById('progress');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
+
 // Track details
 const albumArt = document.querySelector('img');
 const title = document.querySelector('h2');
@@ -85,7 +91,36 @@ function prevTrack(){
 // On load
 loadTrack(tracks[trackIndex]);
 
+function timeProgress(event){
+    if(nowPlaying){
+        const {duration,currentTime} = event.srcElement;
+        const progressPercent = (currentTime/duration)*100;
+        progressBar.style.width = `${progressPercent}%`;
+
+        // Duration timestamp
+        const durationMinutes = Math.floor(duration/60);
+        let durationSeconds = Math.floor(duration%60);
+        if(durationSeconds<10){
+            durationSeconds = `0${durationSeconds}`;
+        }
+        if(durationSeconds){
+            durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
+        }
+
+        // Current timestamp
+        const currentMinutes = Math.floor(currentTime/60);
+        let currentSeconds = Math.floor(currentTime%60);
+        if(currentSeconds<10){
+            currentSeconds = `0${currentSeconds}`;
+        }
+        if (currentSeconds) {
+            currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
+        }
+    } 
+}
+
 // Event listeners
 next.addEventListener('click',nextTrack);
 prev.addEventListener('click',prevTrack);
 audio.addEventListener('ended',nextTrack);
+audio.addEventListener('timeupdate', timeProgress);
